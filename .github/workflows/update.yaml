@@ -42,7 +42,7 @@ jobs:
       - name: Render Rmarkdown/Update data
       run: |
       devtools::load_all()
-      rmarkdown::render("index.Rmd")
+      rmarkdown::render("Dashboard.Rmd")
       shell: Rscript {0}
       
       
