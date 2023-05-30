@@ -1,2 +1,4 @@
+^renv$
+^renv\.lock$
 ^PrevisaoDogeCoin\.Rproj$
 ^\.Rproj\.user$

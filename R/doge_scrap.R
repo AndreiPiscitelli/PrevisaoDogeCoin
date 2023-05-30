@@ -5,7 +5,7 @@ doge_scrap <- function() {
   data_ini <- as.Date(data_fim)-(365*2)
 
   precos <- yf_get(tickers = nome, first_date = data_ini, last_date = data_fim)
-  precos <- precos %>% select(price_open, price_close, price_adjusted, ret_adjusted_prices)
+  precos <- precos %>% select(price_open, price_close, price_adjusted, ret_adjusted_prices, ref_date)
 
 return(precos)
 }

@@ -1,0 +1,55 @@
+---
+title: "Doge-Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+
+```{r setup, include=FALSE}
+# Pacotes
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  "rmarkdown",
+  "flexdashboard",
+  "devtools",
+  "ggplot2",
+  "yfR",
+  "dplyr",
+  "DT"
+  )
+
+# Web-scrapping data
+devtools::load_all()
+precos <- doge_scrap()
+```
+
+Column {.sidebar data-width=180}
+-----------------------------------------------------------------------
+
+`r paste0("Ultima At.: ", Sys.time())`
+
+Column{data-width=800}
+-----------------------------------------------------------------------
+
+```{r, fig.height= 4}
+
+### DogeCoin ao longo do tempo(em USD)
+
+ggplot(precos) + 
+  geom_line(aes(x =ref_date, y = price_adjusted), color = "green4") +
+  xlab("Tempo") + ylab("Preço")
+
+```
+
+```{r table}
+
+### DogeCoin ao longo do tempo(em USD)
+
+tabela <- tail(precos, n=5)
+
+DT::datatable(tabela)
+
+```
