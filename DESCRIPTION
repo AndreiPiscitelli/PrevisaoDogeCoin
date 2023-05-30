@@ -2,9 +2,13 @@ Package: PrevisaoDogeCoin
 Title: Realiza o Scrap da Series de DogeCoin
 Version: 0.0.0.9000
 Authors@R: 
-    person("Andrei", "Piscitelli", , role = c("aut", "cre"))
+    person("Andrei", "Piscitelli", email = "andreipisci@hotmail.com",  role = c("aut", "cre"))
+Author: Andrei Piscitelli [aut, cre]
 Description: O pacote ira ler os dados do dogecoin pelo yahoofinance e salver em um csv.
-License: use_mit_license()
+License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.0
+Imports: 
+    dplyr,
+    yfR
