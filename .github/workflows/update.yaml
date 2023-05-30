@@ -60,7 +60,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add .
           git commit -m "data updated"
-          git push
+          git push origin main
 
       - name: Session info
         run: |
